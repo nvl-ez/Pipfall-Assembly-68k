@@ -1,0 +1,70 @@
+000507B2 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 04/01/2023 23:48:06
+
+00000000                             1  HILLS2
+00000000  48E7 F800                  2          MOVEM.L D0-D4, -(A7)
+00000004                             3          
+00000004  323C 0014                  4          MOVE.W #20, D1
+Line 5 ERROR: Undefined symbol
+00000008  4EB9 004DBD16              5          JSR PINE
+0000000E                             6          
+0000000E  323C 003C                  7          MOVE.W #60, D1
+Line 8 ERROR: Undefined symbol
+00000012  4EB9 004DBD16              8          JSR PINE
+00000018                             9          
+00000018  323C 0253                 10          MOVE.W #595, D1
+Line 11 ERROR: Undefined symbol
+0000001C  4EB9 004DBD16             11          JSR PINE
+00000022                            12          
+00000022  323C 0280                 13          MOVE.W #640, D1
+Line 14 ERROR: Undefined symbol
+00000026  4EB9 004DBD16             14          JSR PINE
+0000002C                            15          
+0000002C                            16  *Set pen color for hills
+0000002C  103C 0050                 17          MOVE.B #80, D0
+Line 18 ERROR: Undefined symbol
+00000030  223C 004DBD16             18          MOVE.L #DRKGREEN, D1
+00000036  4E4F                      19          TRAP #15
+00000038                            20  
+00000038                            21  
+00000038                            22  *Set fill color for hills
+00000038  103C 0051                 23          MOVE.B #81, D0
+Line 24 ERROR: Undefined symbol
+0000003C  223C 004DBD16             24          MOVE.L #DRKGREEN, D1
+00000042  4E4F                      25          TRAP #15
+00000044                            26          
+00000044                            27  *Draw fst hill
+00000044  103C 0058                 28          MOVE.B #88, D0
+00000048                            29          
+00000048  323C 008C                 30          MOVE.W #140, D1
+0000004C  343C 004B                 31          MOVE.W #75, D2
+00000050  363C 015E                 32          MOVE.W #350, D3
+00000054  383C 00E1                 33          MOVE.W #225, D4
+00000058  4E4F                      34          TRAP #15
+0000005A                            35          
+0000005A                            36  *Draw scnd hill
+0000005A  323C 014A                 37          MOVE.W #330, D1
+0000005E  343C 004B                 38          MOVE.W #75, D2
+00000062  363C 021C                 39          MOVE.W #540, D3
+00000066  383C 00E1                 40          MOVE.W #225, D4
+0000006A  4E4F                      41          TRAP #15
+0000006C                            42          
+0000006C                            43  
+0000006C                            44          
+Line 45 ERROR: Undefined symbol
+0000006C  4EB9 004DBD16             45          JSR BASEMENT
+00000072  4CDF 001F                 46          MOVEM.L (A7)+, D0-D4
+00000076  4E75                      47          RTS
+00000078                            48  
+00000078                            49  
+Line 50 WARNING: END directive missing, starting address not set
+
+7 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+HILLS2              0

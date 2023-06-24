@@ -1,0 +1,59 @@
+00001A0A Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 24/12/2022 12:17:51
+
+00000000                             1  *Draws a wall at the specified coord by D1
+00000000                             2  WALL
+00000000  48A7 7C00                  3          MOVEM.W D1-D5, -(A7)
+00000004                             4          
+00000004  3F01                       5          MOVE.W D1, -(A7)
+00000006                             6          
+00000006                             7          *set fill color
+00000006  103C 0051                  8          MOVE.B #81, D0
+Line 9 ERROR: Undefined symbol
+0000000A  223C 004DBD16              9          MOVE.L #DRKGREEN, D1
+00000010  4E4F                      10          TRAP #15
+00000012                            11          
+00000012  321F                      12          MOVE.W (A7)+, D1
+00000014                            13          
+00000014  103C 0057                 14          MOVE.B #87, D0
+00000018  343C 0149                 15          MOVE.W #329, D2
+0000001C  3601                      16          MOVE.W D1, D3
+0000001E  0643 0014                 17          ADD.W #20, D3
+00000022  383C 01EF                 18          MOVE.W #495, D4
+00000026  4E4F                      19          TRAP #15
+00000028                            20          
+00000028  3F01                      21          MOVE.W D1, -(A7)
+0000002A                            22          
+0000002A                            23          *set fill color
+0000002A  103C 0051                 24          MOVE.B #81, D0
+Line 25 ERROR: Undefined symbol
+0000002E  223C 004DBD16             25          MOVE.L #LGTGREEN, D1
+00000034  4E4F                      26          TRAP #15
+00000036                            27          
+00000036  321F                      28          MOVE.W (A7)+, D1
+00000038                            29          
+00000038  103C 0057                 30          MOVE.B #87, D0
+0000003C  5841                      31          ADDQ.W #4, D1
+0000003E  0443 000E                 32          SUB.W #14, D3
+00000042  5A42                      33          ADDQ.W #5, D2
+00000044  5B44                      34          SUBQ.W #5, D4
+00000046  4E4F                      35          TRAP #15
+00000048                            36          
+00000048  0641 000A                 37          ADD #10, D1
+0000004C  0643 000A                 38          ADD.W #10, D3
+00000050  4E4F                      39          TRAP #15
+00000052                            40          
+00000052                            41          
+00000052  4C9F 003E                 42          MOVEM.W (A7)+, D1-D5
+00000056  4E75                      43          RTS
+Line 44 WARNING: END directive missing, starting address not set
+
+2 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+WALL                0

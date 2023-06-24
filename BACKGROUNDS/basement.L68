@@ -1,0 +1,202 @@
+000017F8 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 23/12/2022 19:16:18
+
+00000000                             1  *Draw Basement
+00000000                             2          INCLUDE "BACKGROUNDS/crate.X68"
+Line 3 ERROR: Unable to access specified file
+00000000                             3          INCLUDE "BACKGROUNDS/crate.X68"
+00000000                             4  BASEMENT
+00000000  48A7 7C00                  5          MOVEM.W D1-D5, -(A7)
+00000004                             6          
+00000004                             7          *Draw top path line
+00000004                             8          *set pen color
+00000004  103C 0051                  9          MOVE.B #81, D0
+Line 10 ERROR: Undefined symbol
+00000008  223C 004DBD16             10          MOVE.L #DRKGREEN, D1
+0000000E  4E4F                      11          TRAP #15
+00000010                            12          
+00000010  103C 0057                 13          MOVE.B #87, D0
+00000014                            14          
+00000014  323C 0000                 15          MOVE.W #0, D1
+00000018  343C 0096                 16          MOVE.W #150, D2
+0000001C  363C 0291                 17          MOVE.W #657, D3
+00000020  383C 009A                 18          MOVE.W #154, D4
+00000024                            19          
+00000024  4E4F                      20          TRAP #15
+00000026                            21          
+00000026                            22  *Draw bottom path line
+00000026                            23          *set pen color
+00000026  103C 0051                 24          MOVE.B #81, D0
+Line 25 ERROR: Undefined symbol
+0000002A  223C 004DBD16             25          MOVE.L #NEOGREEN, D1
+00000030  4E4F                      26          TRAP #15
+00000032                            27          
+00000032  103C 0057                 28          MOVE.B #87, D0
+00000036                            29          
+00000036  323C 0000                 30          MOVE.W #0, D1
+0000003A  343C 0104                 31          MOVE.W #260, D2
+0000003E  363C 0291                 32          MOVE.W #657, D3
+00000042  383C 0108                 33          MOVE.W #264, D4
+00000046                            34          
+00000046  4E4F                      35          TRAP #15
+00000048                            36  
+00000048                            37  *Draw concrete
+00000048                            38          *set pen color
+00000048  103C 0051                 39          MOVE.B #81, D0
+Line 40 ERROR: Undefined symbol
+0000004C  223C 004DBD16             40          MOVE.L #GREY, D1
+00000052  4E4F                      41          TRAP #15
+00000054                            42          
+00000054  103C 0057                 43          MOVE.B #87, D0
+00000058                            44          
+00000058  323C 0000                 45          MOVE.W #0, D1
+0000005C  343C 0108                 46          MOVE.W #264, D2
+00000060  363C 0291                 47          MOVE.W #657, D3
+00000064  383C 0145                 48          MOVE.W #325, D4
+00000068                            49          
+00000068  4E4F                      50          TRAP #15
+0000006A                            51          
+0000006A                            52  *Draw basement top line
+0000006A                            53          *set pen color
+0000006A  103C 0051                 54          MOVE.B #81, D0
+Line 55 ERROR: Undefined symbol
+0000006E  223C 004DBD16             55          MOVE.L #DRKGREEN, D1
+00000074  4E4F                      56          TRAP #15
+00000076                            57          
+00000076  103C 0057                 58          MOVE.B #87, D0
+0000007A                            59          
+0000007A  323C 0000                 60          MOVE.W #0, D1
+0000007E  343C 0145                 61          MOVE.W #325, D2
+00000082  363C 0291                 62          MOVE.W #657, D3
+00000086  383C 0149                 63          MOVE.W #329, D4
+0000008A                            64          
+0000008A  4E4F                      65          TRAP #15
+0000008C                            66  
+0000008C                            67  *Draw basement background
+0000008C                            68          *set pen color
+0000008C  103C 0051                 69          MOVE.B #81, D0
+Line 70 ERROR: Undefined symbol
+00000090  223C 004DBD16             70          MOVE.L #GRGREEN, D1
+00000096  4E4F                      71          TRAP #15
+00000098                            72          
+00000098  103C 0057                 73          MOVE.B #87, D0
+0000009C                            74          
+0000009C  323C 0000                 75          MOVE.W #0, D1
+000000A0  343C 0149                 76          MOVE.W #329, D2
+000000A4  363C 0291                 77          MOVE.W #657, D3
+000000A8  383C 01EF                 78          MOVE.W #495, D4
+000000AC                            79          
+000000AC  4E4F                      80          TRAP #15
+000000AE                            81  
+000000AE                            82  *Draw basement floor
+000000AE                            83          *set pen color
+000000AE  103C 0051                 84          MOVE.B #81, D0
+Line 85 ERROR: Undefined symbol
+000000B2  223C 004DBD16             85          MOVE.L #LGTGREEN, D1
+000000B8  4E4F                      86          TRAP #15
+000000BA                            87          
+000000BA  103C 0057                 88          MOVE.B #87, D0
+000000BE                            89          
+000000BE  323C 0000                 90          MOVE.W #0, D1
+000000C2  343C 01EF                 91          MOVE.W #495, D2
+000000C6  363C 0291                 92          MOVE.W #657, D3
+000000CA  383C 020D                 93          MOVE.W #525, D4
+000000CE                            94          
+000000CE  4E4F                      95          TRAP #15
+000000D0                            96          
+000000D0                            97  *Decorate basement
+000000D0                            98          
+000000D0                            99          *Draw first bolts and line
+000000D0                           100          *set fill color
+000000D0  103C 0051                101          MOVE.B #81, D0
+Line 102 ERROR: Undefined symbol
+000000D4  223C 004DBD16            102          MOVE.L #DRKGREEN, D1
+000000DA  4E4F                     103          TRAP #15
+000000DC                           104         
+000000DC  103C 0058                105          MOVE.B #88, D0
+000000E0                           106          
+000000E0  323C 0010                107          MOVE.W #16, D1
+000000E4  363C 0015                108          MOVE.W #21, D3
+000000E8                           109          
+000000E8  3A3C 0004                110          MOVE.W #4, D5
+000000EC                           111          
+000000EC                           112  .BOLTLOOP
+000000EC                           113          *Draw firsrt 3 bolts
+000000EC  343C 014F                114          MOVE.W #335, D2
+000000F0  383C 0154                115          MOVE.W #340, D4
+000000F4  4E4F                     116          TRAP #15
+000000F6                           117          
+000000F6  0642 0043                118          ADD.W #67, D2
+000000FA  0644 0043                119          ADD.W #67, D4
+000000FE  4E4F                     120          TRAP #15
+00000100                           121          
+00000100  0642 0043                122          ADD.W #67, D2
+00000104  0644 0043                123          ADD.W #67, D4
+00000108  4E4F                     124          TRAP #15
+0000010A                           125          
+0000010A                           126          *Draw line
+0000010A  103C 0057                127          MOVE.B #87, D0
+0000010E                           128          
+0000010E  5C41                     129          ADDQ.W #6, D1
+00000110  5843                     130          ADDQ.W #4, D3
+00000112  0442 008C                131          SUB.W #140, D2
+00000116  0644 0015                132          ADD.W #21, D4
+0000011A  4E4F                     133          TRAP #15
+0000011C                           134          
+0000011C                           135          *Move sencond 3 bolts
+0000011C                           136          
+0000011C  103C 0058                137          MOVE.B #88, D0
+00000120                           138          
+00000120  5841                     139          ADDQ.W #4, D1
+00000122  5C43                     140          ADDQ.W #6, D3
+00000124  343C 014F                141          MOVE.W #335, D2
+00000128  383C 0154                142          MOVE.W #340, D4
+0000012C  4E4F                     143          TRAP #15
+0000012E                           144          
+0000012E  0642 0043                145          ADD.W #67, D2
+00000132  0644 0043                146          ADD.W #67, D4
+00000136  4E4F                     147          TRAP #15
+00000138                           148          
+00000138  0642 0043                149          ADD.W #67, D2
+0000013C  0644 0043                150          ADD.W #67, D4
+00000140  4E4F                     151          TRAP #15
+00000142                           152          
+00000142  0641 008E                153          ADD.W #142, D1
+00000146  0643 008E                154          ADD.W #142, D3
+0000014A                           155          
+0000014A  51CD FFA0                156          DBRA D5, .BOLTLOOP *repeat for the other 5 lines
+0000014E                           157          
+0000014E                           158          *Draw Crates
+0000014E                           159          
+0000014E  323C 0041                160          MOVE.W #65, D1
+00000152  343C 014F                161          MOVE.W #335, D2
+Line 162 ERROR: Undefined symbol
+00000156  4EB9 004DBD16            162          JSR CRATE
+0000015C  323C 0041                163          MOVE.W #65, D1
+00000160  343C 019F                164          MOVE.W #415, D2
+Line 165 ERROR: Undefined symbol
+00000164  4EB9 004DBD16            165          JSR CRATE
+0000016A  323C 021E                166          MOVE.W #542, D1
+0000016E  343C 014F                167          MOVE.W #335, D2
+Line 168 ERROR: Undefined symbol
+00000172  4EB9 004DBD16            168          JSR CRATE
+00000178  323C 021E                169          MOVE.W #542, D1
+0000017C  343C 019F                170          MOVE.W #415, D2
+Line 171 ERROR: Undefined symbol
+00000180  4EB9 004DBD16            171          JSR CRATE
+00000186                           172          
+00000186  4C9F 003E                173          MOVEM.W (A7)+, D1-D5
+0000018A  4E75                     174          RTS
+0000018C                           175  
+Line 176 WARNING: END directive missing, starting address not set
+
+12 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+BASEMENT            0
+BASEMENT:BOLTLOOP   EC

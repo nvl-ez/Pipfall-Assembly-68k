@@ -1,0 +1,122 @@
+0006CFE8 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 28/12/2022 2:45:38
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Background1
+00000000                             3  *-----------------------------------------------------------
+00000000                             4  HILLS2
+00000000  48E7 F800                  5          MOVEM.L D0-D4, -(A7)
+00000004                             6  
+00000004                             7  *Set pen color for hills and trees
+00000004  103C 0050                  8          MOVE.B #80, D0
+Line 9 ERROR: Undefined symbol
+00000008  223C 004DBD16              9          MOVE.L #BLACK, D1
+0000000E  4E4F                      10          TRAP #15
+00000010                            11  
+00000010                            12  
+00000010                            13  *Set fill color for hills
+00000010  103C 0051                 14          MOVE.B #81, D0
+Line 15 ERROR: Undefined symbol
+00000014  223C 004DBD16             15          MOVE.L #DRKGREEN, D1
+0000001A  4E4F                      16          TRAP #15
+0000001C                            17          
+0000001C                            18  *Draw fst hill
+0000001C  103C 0058                 19          MOVE.B #88, D0
+00000020                            20          
+00000020  323C FFB0                 21          MOVE.W #-80, D1
+00000024  343C 0014                 22          MOVE.W #20, D2
+00000028  363C 0140                 23          MOVE.W #320, D3
+0000002C  383C 0118                 24          MOVE.W #280, D4
+00000030                            25          
+00000030  4E4F                      26          TRAP #15
+00000032                            27          
+00000032                            28  *Draw scnd hill
+00000032  103C 0058                 29          MOVE.B #88, D0
+00000036                            30          
+00000036  323C 0258                 31          MOVE.W #600, D1
+0000003A  343C 0064                 32          MOVE.W #100, D2
+0000003E  363C 02BC                 33          MOVE.W #700, D3
+00000042  383C 00C8                 34          MOVE.W #200, D4
+00000046                            35          
+00000046  4E4F                      36          TRAP #15
+00000048                            37          
+00000048                            38          *Cover half of the elipse
+00000048  103C 0051                 39          MOVE.B #81, D0
+0000004C  7200                      40          MOVE.L #$00000000, D1
+0000004E  4E4F                      41          TRAP #15
+00000050                            42          
+00000050  103C 0057                 43          MOVE.B #87, D0
+00000054                            44          
+00000054  323C 01F4                 45          MOVE.W #500, D1
+00000058  343C 0096                 46          MOVE.W #150, D2
+0000005C  363C 021C                 47          MOVE.W #540, D3
+00000060  383C 0118                 48          MOVE.W #280, D4
+00000064                            49          
+00000064  4E4F                      50          TRAP #15
+00000066                            51  
+00000066                            52  *Draw tree top
+00000066                            53          *Set fill color for trees
+00000066  103C 0051                 54          MOVE.B #81, D0
+Line 55 ERROR: Undefined symbol
+0000006A  223C 004DBD16             55          MOVE.L #DRKGREEN, D1
+00000070  4E4F                      56          TRAP #15
+00000072                            57          
+00000072  103C 0058                 58          MOVE.B #88, D0
+00000076                            59          
+00000076  323C 017C                 60          MOVE.W #380, D1
+0000007A  343C 0025                 61          MOVE.W #37, D2
+0000007E  363C 01CC                 62          MOVE.W #460, D3
+00000082  383C 007B                 63          MOVE.W #123, D4
+00000086                            64          
+00000086  4E4F                      65          TRAP #15
+00000088                            66          
+00000088                            67          *Cover bottom half of the tree
+00000088                            68          *set pen color
+00000088  103C 0051                 69          MOVE.B #81, D0
+0000008C  7200                      70          MOVE.L #$00000000, D1
+0000008E  4E4F                      71          TRAP #15
+00000090                            72          
+00000090  103C 0057                 73          MOVE.B #87, D0
+00000094                            74          
+00000094  323C 017C                 75          MOVE.W #380, D1
+00000098  343C 0056                 76          MOVE.W #86, D2
+0000009C  363C 01CC                 77          MOVE.W #460, D3
+000000A0  383C 007B                 78          MOVE.W #123, D4
+000000A4                            79          
+000000A4  4E4F                      80          TRAP #15
+000000A6                            81          
+000000A6                            82  *Draw trunk
+000000A6                            83          *set pen color
+000000A6  103C 0051                 84          MOVE.B #81, D0
+Line 85 ERROR: Undefined symbol
+000000AA  223C 004DBD16             85          MOVE.L #LGTGREEN, D1
+000000B0  4E4F                      86          TRAP #15
+000000B2                            87          
+000000B2  103C 0057                 88          MOVE.B #87, D0
+000000B6                            89          
+000000B6  323C 01A4                 90          MOVE.W #420, D1
+000000BA  343C 0056                 91          MOVE.W #86, D2
+000000BE  363C 01AA                 92          MOVE.W #426, D3
+000000C2  383C 0096                 93          MOVE.W #150, D4
+000000C6                            94          
+000000C6  4E4F                      95          TRAP #15        
+000000C8                            96          
+Line 97 ERROR: Undefined symbol
+000000C8  4EB9 004DBD16             97          JSR BASEMENT
+000000CE  4CDF 001F                 98          MOVEM.L (A7)+, D0-D4
+000000D2                            99          
+000000D2  4E75                     100          RTS
+000000D4                           101          
+000000D4                           102  
+000000D4                           103  
+Line 104 WARNING: END directive missing, starting address not set
+
+5 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+HILLS2              0

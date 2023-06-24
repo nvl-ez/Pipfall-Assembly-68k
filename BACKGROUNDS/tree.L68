@@ -1,0 +1,55 @@
+00001962 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 24/12/2022 1:02:56
+
+00000000                             1  *Draw a tree
+00000000                             2  TREE
+00000000                             3          *Draw trunk
+00000000  48E7 F800                  4          MOVEM.L D0-D4, -(A7)
+00000004  103C 0051                  5          MOVE.B #81, D0
+Line 6 ERROR: Undefined symbol
+00000008  223C 004DBD16              6          MOVE.L #DRKGREEN, D1
+0000000E  4E4F                       7          TRAP #15
+00000010  103C 0050                  8          MOVE.B #80, D0
+Line 9 ERROR: Undefined symbol
+00000014  223C 004DBD16              9          MOVE.L #LGTGREEN, D1
+0000001A  4E4F                      10          TRAP #15
+0000001C                            11          
+0000001C  103C 0057                 12          MOVE.B #87, D0
+00000020  323C 023A                 13          MOVE.W #570, D1
+00000024  343C 000A                 14          MOVE.W #10, D2
+00000028  363C 024E                 15          MOVE.W #590, D3
+0000002C  383C 00B4                 16          MOVE.W #180, D4
+00000030  4E4F                      17          TRAP #15
+00000032                            18          
+00000032                            19          *Draw branch
+00000032  103C 0054                 20          MOVE.B #84, D0
+00000036  323C 023A                 21          MOVE.W #570, D1
+0000003A  343C 0050                 22          MOVE.W #80, D2
+0000003E  363C 01CC                 23          MOVE.W #460, D3
+00000042  383C 003C                 24          MOVE.W #60, D4
+00000046  4E4F                      25          TRAP #15
+00000048                            26          
+00000048  343C 0041                 27          MOVE.W #65, D2
+0000004C  4E4F                      28          TRAP #15
+0000004E                            29          
+0000004E  103C 0059                 30          MOVE.B #89, D0
+00000052  323C 0239                 31          MOVE.W #569, D1
+00000056  343C 0042                 32          MOVE.W #66, D2
+0000005A  4E4F                      33          TRAP #15
+0000005C                            34          
+0000005C                            35          
+0000005C                            36          
+0000005C                            37          
+0000005C  4CDF 001F                 38          MOVEM.L (A7)+, D0-D4
+00000060  4E75                      39          RTS
+Line 40 WARNING: END directive missing, starting address not set
+
+2 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+TREE                0
