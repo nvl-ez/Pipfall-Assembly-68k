@@ -1,0 +1,217 @@
+00050662 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 04/01/2023 20:39:37
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title Screen
+00000000                             3  *-----------------------------------------------------------
+00000000                             4  *---Initilize Score Screen-------------------------------------------------
+00000000                             5  SCORESCRINIT
+00000000                             6  * Inicializa la pantalla de puntuacion
+00000000                             7  * INPUT:    None
+00000000                             8  * OUTPUT:   None
+00000000                             9  * MODIFIES: None
+00000000                            10  *--------------------------------------------------------------------
+00000000  4E75                      11          RTS
+00000002                            12  
+00000002                            13  *---Update Score Screen----------------------------------------------------
+00000002                            14  SCORESCRUPD
+00000002                            15  * Acltualiza la pantalla de puntuacion
+00000002                            16  * INPUT:    None
+00000002                            17  * OUTPUT:   None
+00000002                            18  * MODIFIES: None
+00000002                            19  *--------------------------------------------------------------------
+00000002                            20          
+00000002  4E75                      21          RTS
+00000004                            22  
+00000004                            23  *---Plot Score Screen------------------------------------------------------
+00000004                            24  SCORESCRPLOT
+00000004                            25  * Pinta la pantalla de puntuacion
+00000004                            26  * INPUT:    None
+00000004                            27  * OUTPUT:   None
+00000004                            28  * MODIFIES: None
+00000004                            29  *--------------------------------------------------------------------
+00000004  48E7 F880                 30          MOVEM.L D0-D4/A0, -(A7)
+00000008                            31          *Change color and font
+00000008  103C 0051                 32          MOVE.B #81,D0
+Line 33 ERROR: Undefined symbol
+0000000C  223C 004DBD16             33          MOVE.L #BLACK, D1
+00000012  4E4F                      34          TRAP #15
+00000014                            35          
+00000014  103C 0015                 36          MOVE.B #21,D0
+Line 37 ERROR: Undefined symbol
+00000018  223C 004DBD16             37          MOVE.L #NEOGREEN, D1
+0000001E  4202                      38          CLR.B D2
+00000020  4E4F                      39          TRAP #15
+00000022                            40          
+00000022                            41  *Testea que no se haya quedado sin vida
+Line 42 ERROR: Undefined symbol
+00000022  4A79 004DBD16             42          TST.W (PIPHP)
+00000028  6600 0016                 43          BNE .TSTTIME
+0000002C  41F9 00000138             44          LEA .DEADTXT, A0
+00000032  103C 0002                 45          MOVE.B #2, D0
+Line 46 ERROR: Undefined symbol
+00000036  4EB9 004DBD16             46          JSR UTLPRINT
+0000003C  6000 0030                 47          BRA .CALCPOINTS
+00000040                            48  
+00000040                            49  .TSTTIME
+00000040                            50  *Testea que no se haya quedado sin tiempo
+Line 51 ERROR: Undefined symbol
+00000040  4A79 004DBD16             51          TST.W (TIME)
+00000046  6600 0016                 52          BNE .ALLTROPHYS
+0000004A  41F9 0000014C             53          LEA .TIMETXT, A0
+00000050  103C 0002                 54          MOVE.B #2, D0
+Line 55 ERROR: Undefined symbol
+00000054  4EB9 004DBD16             55          JSR UTLPRINT
+0000005A  6000 0012                 56          BRA .CALCPOINTS
+0000005E                            57          
+0000005E                            58  .ALLTROPHYS
+0000005E  41F9 00000164             59          LEA .VICTORYTXT, A0
+00000064  103C 0002                 60          MOVE.B #2, D0
+Line 61 ERROR: Undefined symbol
+00000068  4EB9 004DBD16             61          JSR UTLPRINT
+0000006E                            62  
+0000006E                            63  .CALCPOINTS
+0000006E                            64  *Calcula los puntos obtenidos
+0000006E  4281                      65          CLR.L D1
+00000070                            66          
+00000070                            67  *Puntos de Enviroment
+00000070                            68          *Mover cursor
+00000070  103C 000B                 69          MOVE.B #11, D0
+Line 70 ERROR: Undefined symbol
+00000074  323C BD16                 70          MOVE.W #ENVPPOS, D1
+00000078  4E4F                      71          TRAP #15
+0000007A                            72          
+0000007A                            73          *Print ENV constante
+0000007A  103C 000E                 74          MOVE.B #14, D0
+0000007E  43F9 0000018C             75          LEA .ENVTXT, A1
+00000084  4E4F                      76          TRAP #15
+00000086                            77          
+00000086                            78          *Print ENV variable
+00000086  103C 0003                 79          MOVE.B #3, D0
+Line 80 ERROR: Undefined symbol
+0000008A  3239 004DBD16             80          MOVE.W (ENVID), D1
+00000090  4E4F                      81          TRAP #15
+00000092                            82          
+00000092                            83  *Puntos de vida
+00000092                            84          *Mover cursor
+00000092  103C 000B                 85          MOVE.B #11, D0
+Line 86 ERROR: Undefined symbol
+00000096  323C BD16                 86          MOVE.W #HPPPOS, D1
+0000009A  4E4F                      87          TRAP #15
+0000009C                            88          
+0000009C                            89          *Print HP constante
+0000009C  103C 000E                 90          MOVE.B #14, D0
+000000A0  43F9 000001A0             91          LEA .HEALTHTXT, A1
+000000A6  4E4F                      92          TRAP #15
+000000A8                            93          
+000000A8                            94          *Print HP variable
+000000A8  103C 0003                 95          MOVE.B #3, D0
+Line 96 ERROR: Undefined symbol
+000000AC  3239 004DBD16             96          MOVE.W (PIPHP), D1
+000000B2  4E4F                      97          TRAP #15
+000000B4                            98          
+000000B4                            99          *Print multiplicador HP
+000000B4  103C 000E                100          MOVE.B #14, D0
+000000B8  43F9 000001B5            101          LEA .HPMULTTXT, A1
+000000BE  4E4F                     102          TRAP #15
+000000C0                           103          
+000000C0                           104  *Puntos de tiempo
+000000C0                           105          *Mover cursor
+000000C0  103C 000B                106          MOVE.B #11, D0
+Line 107 ERROR: Undefined symbol
+000000C4  323C BD16                107          MOVE.W #TIMPPOS, D1
+000000C8  4E4F                     108          TRAP #15
+000000CA                           109          
+000000CA                           110          *Print Tiempo constante
+000000CA  103C 000E                111          MOVE.B #14, D0
+000000CE  43F9 000001CE            112          LEA .TIMTXT, A1
+000000D4  4E4F                     113          TRAP #15
+000000D6                           114          
+000000D6                           115          *Print Tiempo variable
+000000D6  103C 0003                116          MOVE.B #3, D0
+Line 117 ERROR: Undefined symbol
+000000DA  3239 004DBD16            117          MOVE.W (TIME), D1
+000000E0  4E4F                     118          TRAP #15
+000000E2                           119          
+000000E2                           120          *Print multiplicador Tiempo
+000000E2  103C 000E                121          MOVE.B #14, D0
+000000E6  43F9 000001DF            122          LEA .TIMMULTXT, A1
+000000EC  4E4F                     123          TRAP #15
+000000EE                           124  
+000000EE                           125  *Puntos de trofeo
+000000EE                           126          *Mover cursor
+000000EE  103C 000B                127          MOVE.B #11, D0
+Line 128 ERROR: Undefined symbol
+000000F2  323C BD16                128          MOVE.W #TROPPOS, D1
+000000F6  4E4F                     129          TRAP #15
+000000F8                           130          
+000000F8                           131          *Print Trofeo constante
+000000F8  103C 000E                132          MOVE.B #14, D0
+000000FC  43F9 000001BB            133          LEA .TROPHYTXT, A1
+00000102  4E4F                     134          TRAP #15
+00000104                           135          
+00000104                           136          *Print Trofeo variable
+00000104  103C 0003                137          MOVE.B #3, D0
+Line 138 ERROR: Undefined symbol
+00000108  3239 004DBD16            138          MOVE.W (SCORE), D1
+0000010E  4E4F                     139          TRAP #15
+00000110                           140  
+00000110                           141  *Dibuja linea separadora
+00000110                           142  
+00000110                           143          *set pen color
+00000110  103C 0051                144          MOVE.B #81, D0
+Line 145 ERROR: Undefined symbol
+00000114  223C 004DBD16            145          MOVE.L #NEOGREEN, D1
+0000011A  4E4F                     146          TRAP #15
+0000011C                           147          *dibuja linea
+0000011C  103C 0057                148          MOVE.B #87, D0
+00000120  323C 0000                149          MOVE.W #0, D1
+00000124  343C 0108                150          MOVE.W #264, D2
+00000128  363C 0291                151          MOVE.W #657, D3
+0000012C  383C 0145                152          MOVE.W #325, D4
+00000130  4E4F                     153          TRAP #15
+00000132                           154          
+00000132                           155  *Dibuja puntos totales 
+00000132                           156          
+00000132  4CDF 011F                157          MOVEM.L (A7)+, D0-D4/A0
+00000136  4E75                     158          RTS
+00000138                           159  
+00000138                           160  
+00000138= 47 61 6D 65 20 4F ...    161  .DEADTXT    DC.B 'Game Over: You Died',0
+0000014C= 47 61 6D 65 20 4F ...    162  .TIMETXT    DC.B 'Game Over: Time Ran Out',0
+00000164= 43 6F 6E 67 72 61 ...    163  .VICTORYTXT DC.B 'Congratulations: You Won',0
+0000017D= 54 6F 74 61 6C 20 ...    164  .POINTSTXT  DC.B 'Total Points: ',0
+0000018C= 50 6C 61 63 65 73 ...    165  .ENVTXT     DC.B 'Places Discovered: ',0
+000001A0= 48 65 61 6C 74 68 ...    166  .HEALTHTXT  DC.B 'Health Points Left: ',0
+000001B5= 20 2A 20 31 30 00        167  .HPMULTTXT  DC.B ' * 10',0
+000001BB= 54 72 6F 70 68 79 ...    168  .TROPHYTXT  DC.B 'Trophys Obtained: ',0
+000001CE= 54 69 6D 65 20 52 ...    169  .TIMTXT    DC.B 'Time Remaining: ',0
+000001DF= 20 2A 20 35 00           170  .TIMMULTXT  DC.B ' * 5',0
+000001E4                           171              DS.W 0
+000001E4                           172  
+Line 173 WARNING: END directive missing, starting address not set
+
+16 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+SCORESCRINIT        0
+SCORESCRPLOT        4
+SCORESCRPLOT:ALLTROPHYS  5E
+SCORESCRPLOT:CALCPOINTS  6E
+SCORESCRPLOT:DEADTXT  138
+SCORESCRPLOT:ENVTXT  18C
+SCORESCRPLOT:HEALTHTXT  1A0
+SCORESCRPLOT:HPMULTTXT  1B5
+SCORESCRPLOT:POINTSTXT  17D
+SCORESCRPLOT:TIMETXT  14C
+SCORESCRPLOT:TIMMULTXT  1DF
+SCORESCRPLOT:TIMTXT  1CE
+SCORESCRPLOT:TROPHYTXT  1BB
+SCORESCRPLOT:TSTTIME  40
+SCORESCRPLOT:VICTORYTXT  164
+SCORESCRUPD         2

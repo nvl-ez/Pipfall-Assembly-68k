@@ -1,0 +1,120 @@
+*-----------------------------------------------------------
+* FIREBALL
+* FIREPOSY (W)  (A0)
+* PARENT ENVIROMENT (W) 2(A0)
+*-----------------------------------------------------------
+        INCLUDE "BACKGROUNDS/fireball.X68"
+*---Initilize FIREBALL-------------------------------------------------
+FIREINIT
+* Inicializa la bola de fuego
+* INPUT:    A0 pointer to instance variables
+* OUTPUT:   None
+* MODIFIES: None
+*--------------------------------------------------------------------
+            MOVE.W D7, -(A7)
+            
+            MOVE.W #FIREY, (A0)
+            MOVE.W (CURRENV), 2(A0)
+            
+            ;Play sound
+            TRAP #SNDSPTN
+            MOVE.B #SNDSHOOT, D7
+            TRAP #SNDPLTN
+            
+            MOVE.W (A7)+, D7
+        RTS
+
+*---Update FIREBALL----------------------------------------------------
+FIREUPD
+* Acltualiza la bola de fuego
+* INPUT:    A0 pointer to instance variables
+* OUTPUT:   None
+* MODIFIES: None
+*--------------------------------------------------------------------
+        
+        MOVEM.W D0-D3, -(A7)
+        MOVE.W 2(A0), D0
+        CMP.W (CURRENV), D0
+        BNE .END
+        
+        MOVE.W (A0), D0
+        CMP #PROPY, D0
+        BLT .CONT
+        JSR AGLKILL
+        BRA .END
+
+.CONT
+        ADD.W #FIRESP, D0
+        MOVE.W D0, (A0)
+        
+        *Verifica si ha colisionado con el jugador
+        
+        MOVE.W (PIPPOSY), D1
+        CMP.W (A0), D1
+        BGT .END
+        
+        *D0-Costado izquierdo del barril
+        *D1-Costado derecho del barril
+        *D2-Costado izquierdo del jugador
+        *D3-Costado derecho del jugador
+        
+        MOVE.W (PIPPOSX), D2
+        MOVE.W D2, D3
+        ADD.W #PIPW, D3
+        MOVE.W #SCRW/2-20, D0
+        MOVE.W D0, D1
+        ADD.W #FIREW, D1
+        
+        CMP.W D3, D0
+        BGT .END
+        
+        CMP.W D2, D1
+        BLT .END
+        JSR DEALDMG
+        JSR AGLKILL
+
+.END
+        MOVEM.W (A7)+, D0-D3
+        RTS
+
+*---Plot FIREBALL------------------------------------------------------
+FIREPLOT
+* Pinta la bola de fuego
+* INPUT:    A0 pointer to instance variables
+* OUTPUT:   None
+* MODIFIES: None
+*--------------------------------------------------------------------
+        MOVEM.L D0-D2/A6, -(A7)
+        
+        MOVE.W 2(A0), D0
+        CMP.W (CURRENV), D0
+        BNE .ENDPLOT
+        
+        MOVE.W (A0), D2
+        MOVE.W #SCRW/2-20, D1
+        LEA FIREBALL, A6
+        JSR UTLDRAW
+.ENDPLOT
+        MOVEM.L (A7)+, D0-D2/A6
+        RTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*~Font name~Courier New~
+*~Font size~12~
+*~Tab type~1~
+*~Tab size~4~

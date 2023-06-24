@@ -1,0 +1,81 @@
+00050A32 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 17/01/2023 8:54:07
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * GAME VARIABLES
+00000000                             3  *-----------------------------------------------------------
+00000000                             4  
+00000000                             5  *---SCORE-BOARD---------------------------------------------
+00000000                             6  PIPHP       DS.W    1   ;Vida del pipboy que se muestra
+00000002                             7  TRUEHP      DS.W    1   ;Vida real
+00000004                             8  TIME        DS.W    1   ;Contador de tiempo
+00000006                             9  TRUETIME    DS.W    1   ;tiempo en frames
+00000008                            10  SCORE       DS.W    1   ;Puntos recogidos
+0000000A                            11  
+0000000A                            12  
+0000000A                            13  *---PIPBOY--------------------------------------------------
+0000000A                            14  PIPPOSX     DS.W    1   ;Posicion del pipboy eje X
+0000000C                            15  PIPPOSY     DS.W    1   ;Posicion del pipboy eje Y
+0000000E                            16  PIPVELX     DS.W    1   ;Velocidad del pipboy eje X
+00000010                            17  PIPVELY     DS.W    1   ;Velocidad del pipboy eje Y
+00000012                            18  PIPREADY    DS.W    1   
+00000014                            19  PIPCLIMB    DS.W    1   ;Almacena si esta escalando
+00000016                            20  PIPJUMP     DS.W    1   ;Almacena si esta saltando
+00000018                            21  PIPANIM     DS.W    1   ;Animacion del pipboy que se va a dibujar
+0000001A                            22  PIPPREV     DS.W    1   ;Almacena si se tiene que cargar la escena anterior
+0000001C                            23  PIPNEXT     DS.W    1   ;Almacena si se tiene que cargar la escena siguiente
+0000001E                            24  PIPHANG     DS.W    1
+00000020                            25  *---ENVIROMENT----------------------------------------------
+00000020                            26  ENVID       DS.W    1   ;Almacena la cantidad de Enviroments creados
+00000022                            27  CURRENV     DS.W    1   ;Almacena el Enviroment actual
+00000024                            28  *---ROPE----------------------------------------------------
+00000024                            29  ROPEPOSX    DS.W    1
+00000026                            30  ROPEVELX    DS.W    1
+00000028                            31  *---CRAB----------------------------------------------------
+00000028                            32  ATACKING    DS.W    1   ;Almacena si el cangrejo esta atacando o no
+0000002A                            33  *---GAME----------------------------------------------------
+0000002A                            34  STATE       DS.W    1   ;0 Title screen, 1 in game, 2 score screen
+0000002C                            35  
+0000002C                            36  
+0000002C                            37  
+0000002C                            38  
+0000002C                            39  
+0000002C                            40  
+0000002C                            41  
+0000002C                            42  
+0000002C                            43  
+0000002C                            44  
+0000002C                            45  
+0000002C                            46  
+Line 47 WARNING: END directive missing, starting address not set
+
+No errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+ATACKING            28
+CURRENV             22
+ENVID               20
+PIPANIM             18
+PIPCLIMB            14
+PIPHANG             1E
+PIPHP               0
+PIPJUMP             16
+PIPNEXT             1C
+PIPPOSX             A
+PIPPOSY             C
+PIPPREV             1A
+PIPREADY            12
+PIPVELX             E
+PIPVELY             10
+ROPEPOSX            24
+ROPEVELX            26
+SCORE               8
+STATE               2A
+TIME                4
+TRUEHP              2
+TRUETIME            6

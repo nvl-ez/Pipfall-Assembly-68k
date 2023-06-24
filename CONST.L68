@@ -1,0 +1,122 @@
+00069C12 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 31/12/2022 19:00:33
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * GAME CONSTANTS
+00000000                             3  *-----------------------------------------------------------
+00000000                             4  
+00000000                             5  *---PROP-CONSTS---------------------------------------------
+00000000  =000000DC                  6  PROPY            EQU 220            ;Altura a la que se generan los items
+00000000                             7  *ROPE
+00000000  =00000082                  8  ROPEBOTOM        EQU 130            ;determina la parte inferior de la cuerda
+00000000  =000001C9                  9  ROPEMAX          EQU 457
+00000000  =000000C8                 10  ROPEMIN          EQU 200
+00000000  =00000003                 11  ROPESPEED        EQU 3
+00000000                            12  *SIGNAL
+00000000  =000000C8                 13  LSIGNAL          EQU 200
+00000000  =00000186                 14  RSIGNAL          EQU 390
+00000000                            15  *MINE
+00000000  =00000064                 16  LMINE            EQU 100
+00000000  =0000022D                 17  RMINE            EQU 557
+00000000                            18  *BARREL
+00000000  =00000005                 19  BARRELSP         EQU 5
+00000000  =000002A3                 20  BARRELX          EQU 675
+00000000  =0000001E                 21  BARRELTIM        EQU 30
+00000000                            22  *FIREBALL
+00000000  =FFFFFFF6                 23  FIREY            EQU -10
+00000000  =00000005                 24  FIRESP           EQU 5
+00000000  =00000064                 25  FIRETIM          EQU 100
+00000000                            26  *ENVIROMENT
+Line 27 ERROR: Undefined symbol
+00000000                            27  RXTRIGGER        EQU SCRW-10
+00000000  =0000000A                 28  LXTRIGGER        EQU 10
+00000000                            29  *CRAB
+00000000  =00000028                 30  ATCKSP           EQU 40
+00000000  =000000C2                 31  ATCKY            EQU PROPY-26
+Line 32 ERROR: Invalid syntax
+00000000                            32  ATCKX            EQU (SCRW/2)-22
+00000000  =000000CF                 33  NOATCKY          EQU PROPY-13
+Line 34 ERROR: Invalid syntax
+00000000                            34  NOATCKX          EQU (SCRW/2)-38       
+00000000                            35  
+00000000                            36  *---PIPBOY-CONSTS-------------------------------------------
+00000000                            37        
+00000000  =00000005                 38  PIPSPEEDX        EQU 5             ;Magnitud de la velocidad
+00000000  =00000014                 39  PIPSPEEDY        EQU 20           ;Magnitud de la velocidad vertical
+00000000  =00000032                 40  PIPSTARTX        EQU 50             ;Posicion horizontal en le que aparece al principio
+Line 41 ERROR: Undefined symbol
+00000000                            41  PIPENDX          EQU SCRW-50
+00000000  =00000082                 42  ROPEBOTOM        EQU 130            ;determina la parte inferior de la cuerda
+00000000  =00000002                 43  PIPGRAV          EQU 2
+00000000  =00000078                 44  PIPFLOOR         EQU PROPY-100
+00000000  =00000005                 45  PIPANIMSP        EQU 5
+00000000                            46  
+00000000                            47  *---GENERATION-BORARD-CONSTS--------------------------------
+00000000                            48  
+00000000  =0000F800                 49  SBPNCOL         EQU $0000F800       ;Color del texto
+00000000  =00000000                 50  SBBKCOL         EQU $00000000       ;Color del fondo del texto
+00000000  =00000302                 51  HPPOS           EQU $0302           ;Posicion de la vida
+00000000  =00002702                 52  TIMEPOS         EQU $2702           ;Posicion del tiempo
+00000000  =00000303                 53  SCOREPOS        EQU $0303           ;Posicion de los puntos
+00000000                            54  
+00000000                            55  *---DRAWING-COLORS------------------------------------------
+00000000                            56  
+00000000  =00113410                 57  DRKGREEN        EQU $00113410
+00000000  =00106110                 58  LGTGREEN        EQU $00106110
+00000000  =0011AC10                 59  NEOGREEN        EQU $0011ac10
+00000000  =00000000                 60  BLACK           EQU $00000000
+00000000  =00111810                 61  GRAY            EQU $00111810
+00000000  =00111101                 62  GRGREEN         EQU $00111101
+00000000                            63  
+00000000                            64  
+00000000                            65  
+00000000                            66  
+00000000                            67  
+00000000                            68  
+00000000                            69  
+Line 70 WARNING: END directive missing, starting address not set
+
+4 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+ATCKSP              28
+ATCKY               C2
+BARRELSP            5
+BARRELTIM           1E
+BARRELX             2A3
+BLACK               0
+DRKGREEN            113410
+FIRESP              5
+FIRETIM             64
+FIREY               FFFFFFF6
+GRAY                111810
+GRGREEN             111101
+HPPOS               302
+LGTGREEN            106110
+LMINE               64
+LSIGNAL             C8
+LXTRIGGER           A
+NEOGREEN            11AC10
+NOATCKY             CF
+PIPANIMSP           5
+PIPFLOOR            78
+PIPGRAV             2
+PIPSPEEDX           5
+PIPSPEEDY           14
+PIPSTARTX           32
+PROPY               DC
+RMINE               22D
+ROPEBOTOM           82
+ROPEMAX             1C9
+ROPEMIN             C8
+ROPESPEED           3
+RSIGNAL             186
+SBBKCOL             0
+SBPNCOL             F800
+SCOREPOS            303
+TIMEPOS             2702

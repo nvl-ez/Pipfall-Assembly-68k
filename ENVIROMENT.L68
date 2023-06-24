@@ -1,0 +1,660 @@
+00069AB8 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 29/12/2022 15:36:03
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * ENVIROMENT
+00000000                             3  * ID             (A0) W
+00000000                             4  * Background    2(A0) L
+00000000                             5  * Center Prop   4(A0) W
+00000000                             6  * Rope          6(A0) W
+00000000                             7  * Mines         8(A0) W
+00000000                             8  * Barrels      10(A0) W
+00000000                             9  * Fire         12(A0) W
+00000000                            10  * Door         14(A0) W
+00000000                            11  *-----------------------------------------------------------
+00000000                            12          INCLUDE "BACKGROUNDS/hills1.X68"
+00000000                            13  HILLS1
+00000000  48E7 F800                 14          MOVEM.L D0-D4, -(A7)
+00000004                            15  
+00000004  103C 0050                 16          MOVE.B #80, D0
+Line 17 ERROR: Undefined symbol
+00000008  223C 004DBD16             17          MOVE.L #BLACK, D1
+0000000E  4E4F                      18          TRAP #15
+00000010                            19  
+00000010                            20  
+00000010  103C 0051                 21          MOVE.B #81, D0
+Line 22 ERROR: Undefined symbol
+00000014  223C 004DBD16             22          MOVE.L #DRKGREEN, D1
+0000001A  4E4F                      23          TRAP #15
+0000001C                            24          
+0000001C  103C 0058                 25          MOVE.B #88, D0
+00000020                            26          
+00000020  323C FFB0                 27          MOVE.W #-80, D1
+00000024  343C 0014                 28          MOVE.W #20, D2
+00000028  363C 0140                 29          MOVE.W #320, D3
+0000002C  383C 0118                 30          MOVE.W #280, D4
+00000030                            31          
+00000030  4E4F                      32          TRAP #15
+00000032                            33          
+00000032  103C 0058                 34          MOVE.B #88, D0
+00000036                            35          
+00000036  323C 0258                 36          MOVE.W #600, D1
+0000003A  343C 0064                 37          MOVE.W #100, D2
+0000003E  363C 02BC                 38          MOVE.W #700, D3
+00000042  383C 00C8                 39          MOVE.W #200, D4
+00000046                            40          
+00000046  4E4F                      41          TRAP #15
+00000048                            42          
+00000048                            43          *Cover half of the elipse
+00000048  103C 0051                 44          MOVE.B #81, D0
+0000004C  7200                      45          MOVE.L #$00000000, D1
+0000004E  4E4F                      46          TRAP #15
+00000050                            47          
+00000050  103C 0057                 48          MOVE.B #87, D0
+00000054                            49          
+00000054  323C 01F4                 50          MOVE.W #500, D1
+00000058  343C 0096                 51          MOVE.W #150, D2
+0000005C  363C 021C                 52          MOVE.W #540, D3
+00000060  383C 0118                 53          MOVE.W #280, D4
+00000064                            54          
+00000064  4E4F                      55          TRAP #15
+00000066                            56  
+00000066                            57          *Set fill color for trees
+00000066  103C 0051                 58          MOVE.B #81, D0
+Line 59 ERROR: Undefined symbol
+0000006A  223C 004DBD16             59          MOVE.L #DRKGREEN, D1
+00000070  4E4F                      60          TRAP #15
+00000072                            61          
+00000072  103C 0058                 62          MOVE.B #88, D0
+00000076                            63          
+00000076  323C 017C                 64          MOVE.W #380, D1
+0000007A  343C 0025                 65          MOVE.W #37, D2
+0000007E  363C 01CC                 66          MOVE.W #460, D3
+00000082  383C 007B                 67          MOVE.W #123, D4
+00000086                            68          
+00000086  4E4F                      69          TRAP #15
+00000088                            70          
+00000088                            71          *Cover bottom half of the tree
+00000088                            72          *set pen color
+00000088  103C 0051                 73          MOVE.B #81, D0
+0000008C  7200                      74          MOVE.L #$00000000, D1
+0000008E  4E4F                      75          TRAP #15
+00000090                            76          
+00000090  103C 0057                 77          MOVE.B #87, D0
+00000094                            78          
+00000094  323C 017C                 79          MOVE.W #380, D1
+00000098  343C 0056                 80          MOVE.W #86, D2
+0000009C  363C 01CC                 81          MOVE.W #460, D3
+000000A0  383C 007B                 82          MOVE.W #123, D4
+000000A4                            83          
+000000A4  4E4F                      84          TRAP #15
+000000A6                            85          
+000000A6                            86          *set pen color
+000000A6  103C 0051                 87          MOVE.B #81, D0
+Line 88 ERROR: Undefined symbol
+000000AA  223C 004DBD16             88          MOVE.L #LGTGREEN, D1
+000000B0  4E4F                      89          TRAP #15
+000000B2                            90          
+000000B2  103C 0057                 91          MOVE.B #87, D0
+000000B6                            92          
+000000B6  323C 01A4                 93          MOVE.W #420, D1
+000000BA  343C 0056                 94          MOVE.W #86, D2
+000000BE  363C 01AA                 95          MOVE.W #426, D3
+000000C2  383C 0096                 96          MOVE.W #150, D4
+000000C6                            97          
+000000C6  4E4F                      98          TRAP #15        
+000000C8                            99          
+Line 100 ERROR: Undefined symbol
+000000C8  4EB9 004DBD16            100          JSR BASEMENT
+000000CE  4CDF 001F                101          MOVEM.L (A7)+, D0-D4
+000000D2                           102          
+000000D2  4E75                     103          RTS
+000000D4                           104          
+000000D4                           105  
+000000D4                           106  
+000000D4                           107  
+000000D4                           108  -------------------- end include --------------------
+000000D4                           109          INCLUDE "BACKGROUNDS/hills2.X68"
+000000D4                           110  HILLS2
+000000D4                           111  
+000000D4  4E75                     112      RTS
+000000D6                           113  
+000000D6                           114  
+000000D6                           115  -------------------- end include --------------------
+000000D6                           116          INCLUDE "BACKGROUNDS/pines.X68"
+000000D6                           117  PINES
+000000D6                           118  
+000000D6  4E75                     119          RTS
+000000D6  4E75                     120  -------------------- end include --------------------
+000000D8                           121          INCLUDE "BACKGROUNDS/sqtrees.X68"
+000000D8                           122  SQTREES
+000000D8                           123  
+000000D8  4E75                     124          RTS
+000000D8  4E75                     125  -------------------- end include --------------------
+000000DA                           126          INCLUDE "BARREL.X68"
+000000DA                           127          INCLUDE "BACKGROUNDS/barrel.X68"
+000000DA                           128  BARREL
+000000DA  48E7 F800                129          MOVEM.L D0-D4, -(A7)
+000000DE                           130          
+000000DE  3F01                     131          MOVE.W D1, -(A7)
+000000E0                           132          
+000000E0                           133          *set pen color
+000000E0  103C 0051                134          MOVE.B #81, D0
+Line 135 ERROR: Undefined symbol
+000000E4  223C 004DBD16            135          MOVE.L #BLACK, D1
+000000EA  4E4F                     136          TRAP #15
+000000EC  103C 0050                137          MOVE.B #80, D0
+Line 138 ERROR: Undefined symbol
+000000F0  223C 004DBD16            138          MOVE.L #NEOGREEN, D1
+000000F6  4E4F                     139          TRAP #15
+000000F8                           140          
+000000F8  321F                     141          MOVE.W (A7)+, D1
+000000FA                           142          
+000000FA  103C 0058                143          MOVE.B #88, D0
+000000FE  3601                     144          MOVE.W D1, D3
+00000100  5A41                     145          ADDQ.W #5, D1
+00000102  0643 001C                146          ADD.W #28, D3
+Line 147 ERROR: Comma expected
+00000106                           147          MOVE.W #PROPY-30, D2
+Line 148 ERROR: Comma expected
+00000106                           148          MOVE.W #PROPY-10, D4
+00000106  4E4F                     149          TRAP #15
+00000108                           150          
+00000108  3F01                     151          MOVE.W D1, -(A7)
+0000010A                           152          
+0000010A                           153          *set pen color
+0000010A  103C 0050                154          MOVE.B #80, D0
+Line 155 ERROR: Undefined symbol
+0000010E  223C 004DBD16            155          MOVE.L #BLACK, D1
+00000114  4E4F                     156          TRAP #15
+00000116                           157          
+00000116  321F                     158          MOVE.W (A7)+, D1
+00000118                           159          
+00000118  103C 0057                160          MOVE.B #87, D0
+Line 161 ERROR: Comma expected
+0000011C                           161          MOVE.W #PROPY-20, D2
+0000011C  4E4F                     162          TRAP #15
+0000011E                           163          
+0000011E  3F01                     164          MOVE.W D1, -(A7)
+00000120                           165          
+00000120                           166          *set pen color
+00000120  103C 0050                167          MOVE.B #80, D0
+Line 168 ERROR: Undefined symbol
+00000124  223C 004DBD16            168          MOVE.L #NEOGREEN, D1
+0000012A  4E4F                     169          TRAP #15
+0000012C                           170          
+0000012C  321F                     171          MOVE.W (A7)+, D1
+0000012E                           172          
+0000012E  103C 0058                173          MOVE.B #88, D0
+00000132  5B41                     174          SUBQ.W #5, D1
+00000134  5B43                     175          SUBQ.W #5, D3
+Line 176 ERROR: Comma expected
+00000136                           176          MOVE.W #PROPY-10, D2
+Line 177 ERROR: Invalid syntax
+00000136                           177          MOVE.W #PROPY+10, D4
+00000136  4E4F                     178          TRAP #15
+00000138                           179  
+00000138  103C 0054                180          MOVE.B #84, D0
+Line 181 ERROR: Undefined symbol
+0000013C  343C BD16                181          MOVE.W #PROPY, D2
+Line 182 ERROR: Comma expected
+00000140                           182          MOVE.W #PROPY-20, D4
+00000140  0443 0012                183          SUB.W #18, D3
+00000144  4E4F                     184          TRAP #15
+00000146  0641 0017                185          ADD.W #23, D1
+0000014A  0643 0017                186          ADD.W #23, D3
+0000014E  4E4F                     187          TRAP #15
+00000150                           188          
+00000150  103C 0050                189          MOVE.B #80, D0
+Line 190 ERROR: Undefined symbol
+00000154  223C 004DBD16            190          MOVE.L #BLACK, D1
+0000015A  4E4F                     191          TRAP #15
+0000015C                           192          
+0000015C  4CDF 001F                193          MOVEM.L (A7)+, D0-D4
+00000160  4E75                     194          RTS
+00000162                           195  
+00000162                           196  
+00000162                           197  -------------------- end include --------------------
+Line 198 ERROR: Symbol value differs between first and second pass
+00000162                           198  BARRELINIT
+Line 199 ERROR: Undefined symbol
+00000162  30BC BD16                199              MOVE.W #BARRELX, (A0)
+00000166  4E75                     200          RTS
+00000168                           201  
+Line 202 ERROR: Symbol value differs between first and second pass
+00000168                           202  BARRELUPD
+00000168                           203          
+00000168  3F00                     204          MOVE.W D0, -(A7)
+0000016A                           205          
+0000016A  3010                     206          MOVE.W (A0), D0
+0000016C  B07C FFEC                207          CMP #-20, D0
+00000170  6E00 0024                208          BGT .CONT
+Line 209 ERROR: Undefined symbol
+00000174  4EB9 004DBD16            209          JSR AGLKILL
+0000017A  6000 0020                210          BRA .END
+0000017E                           211  
+Line 212 ERROR: Symbol value differs between first and second pass
+0000017E                           212  .CONT
+Line 213 ERROR: Undefined symbol
+0000017E  0440 BD16                213          SUB.W #BARRELSP, D0
+00000182  3080                     214          MOVE.W D0, (A0)
+Line 215 ERROR: Symbol value differs between first and second pass
+00000184                           215  .END
+00000184  301F                     216          MOVE.W (A7)+, D0
+00000186  4E75                     217          RTS
+00000188                           218  
+Line 219 ERROR: Symbol value differs between first and second pass
+00000188                           219  BARRELPLOT
+00000188  3F01                     220          MOVE.W D1, -(A7)
+0000018A                           221          
+0000018A  3210                     222          MOVE.W (A0), D1
+0000018C  4EB8 00DA                223          JSR BARREL
+00000190                           224          
+00000190  321F                     225          MOVE.W (A7)+, D1
+00000192  4E75                     226          RTS
+00000194                           227  
+00000194                           228  
+00000194                           229  
+00000194                           230  
+00000194                           231  
+00000194                           232  
+00000194                           233  
+00000194                           234  
+00000194                           235  -------------------- end include --------------------
+00000194                           236          INCLUDE "FIREBALL.X68"
+00000194                           237          INCLUDE "BACKGROUNDS/fireball.X68"
+Line 238 ERROR: Symbol value differs between first and second pass
+00000194                           238  FIREBALL
+00000194= 00 00 00 00 00 00 ...    239          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+000001A8= 00 00 00 00 00 00 ...    240          DC.B 0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,2,0
+000001BD= 00 00 00 00 00 00 ...    241          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+000001D1= 00 00 01 01 00 00 ...    242          DC.B 0,0,1,1,0,0,0,0,1,1,1,1,1,0,0,0,0,0,2,0,0
+000001E6= 00 00 00 00 00 00 ...    243          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+000001FA= 01 01 00 00 00 01 ...    244          DC.B 1,1,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,2,0,0,0
+0000020F= 00 00 00 00 00 00 ...    245          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+00000223= 00 00 01 01 01 01 ...    246          DC.B 0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,2,0,0,0,0
+00000238= 00 00 00 00 00 00 ...    247          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+0000024C= 01 01 01 01 01 01 ...    248          DC.B 1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0
+00000261= 00 00 00 00 00 00 ...    249          DC.B 0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,1,1
+00000275= 01 01 01 01 01 00 ...    250          DC.B 1,1,1,1,1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0
+0000028A= 00 00 00 00 00 00 ...    251          DC.B 0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,1,1,1
+0000029E= 01 01 01 00 00 00 ...    252          DC.B 1,1,1,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0
+000002B3= 00 00 00 00 00 00 ...    253          DC.B 0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,1,1,1,1
+000002C7= 01 01 00 00 00 00 ...    254          DC.B 1,1,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0
+000002DC= 00 00 00 00 00 00 ...    255          DC.B 0,0,0,0,0,0,1,1,1,1,0,0,0,1,1,1,1,1,1,1
+000002F0= 01 00 00 00 00 00 ...    256          DC.B 1,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0
+00000305= 00 00 00 00 00 01 ...    257          DC.B 0,0,0,0,0,1,1,1,1,0,0,0,1,1,1,1,1,1,1,0
+00000319= 00 00 00 00 00 00 ...    258          DC.B 0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0
+0000032E= 00 00 00 00 01 01 ...    259          DC.B 0,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,1,1,0,0
+00000342= 00 00 00 00 00 00 ...    260          DC.B 0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0
+00000357= 00 00 01 01 01 01 ...    261          DC.B 0,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0
+0000036B= 00 00 00 00 00 00 ...    262          DC.B 0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0
+00000380= 01 01 01 01 01 01 ...    263          DC.B 1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0
+00000394= 00 00 00 00 00 00 ...    264          DC.B 0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,1
+000003A9= 01 01 01 01 01 01 ...    265          DC.B 1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0
+000003BD= 00 00 00 00 00 00 ...    266          DC.B 0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+000003D2= 01 01 01 01 01 01 ...    267          DC.B 1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,0,0
+000003E6= 00 00 00 00 00 02 ...    268          DC.B 0,0,0,0,0,2,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1
+000003FB= 01 01 01 01 01 01 ...    269          DC.B 1,1,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+0000040F= 00 00 00 00 02 00 ...    270          DC.B 0,0,0,0,2,0,0,0,0,1,1,1,1,0,0,0,1,1,1,1,1
+00000424= 01 01 01 01 00 00 ...    271          DC.B 1,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0
+00000438= 00 00 00 02 00 00 ...    272          DC.B 0,0,0,2,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1
+0000044D= 01 01 00 00 00 00 ...    273          DC.B 1,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0
+00000461= 00 00 02 00 00 01 ...    274          DC.B 0,0,2,0,0,1,1,1,0,1,1,0,0,0,0,0,0,0,1,1,1
+00000476= 01 01 00 00 01 01 ...    275          DC.B 1,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+0000048A= 00 02 00 00 01 01 ...    276          DC.B 0,2,0,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1
+0000049F= 01 01 01 01 01 01 ...    277          DC.B 1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+000004B3= 02 00 01 01 00 01 ...    278          DC.B 2,0,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1
+000004C8= 01 01 01 01 01 01 ...    279          DC.B 1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+000004DD= 01 01 00 01 01 01 ...    280          DC.B 1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+000004F1= 01 01 01 01 00 00 ...    281          DC.B 1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1
+00000506= 01 00 01 01 01 00 ...    282          DC.B 1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1
+0000051A= 01 00 00 00 00 00 ...    283          DC.B 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,1
+0000052F= 00 01 01 01 00 00 ...    284          DC.B 0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+00000543= 00 00 00 00 00 00 ...    285          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,1,0
+00000558= 01 01 01 01 00 00 ...    286          DC.B 1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+0000056C= 00 00 00 00 00 00 ...    287          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,1,0,1
+00000581= 01 01 01 01 00 00 ...    288          DC.B 1,1,1,1,0,0,0,1,1,0,0,0,1,1,0,0,0,0,0,0
+00000595= 00 00 00 00 00 00 ...    289          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,1,1,1,1
+000005AA= 01 01 01 01 01 01 ...    290          DC.B 1,1,1,1,1,1,1,1,0,0,1,1,0,0,0,0,0,0,0,0
+000005BE= 00 00 00 00 00 00 ...    291          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,1,1,0,1,1
+000005D3= 01 01 01 01 01 01 ...    292          DC.B 1,1,1,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+000005E7= 00 00 00 00 00 00 ...    293          DC.B 0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,1,1,1,0,0,1
+000005FC= 01 01 01 00 00 00 ...    294          DC.B 1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+00000610= 00 00 00 00 00 00 ...    295          DC.B 0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,1,1,1,0,0,0
+00000625= 00 00 00 00 01 01 ...    296          DC.B 0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+00000639= 00 00 00 00 00 00 ...    297          DC.B 0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,1,1,1,1,1,1
+0000064E= 01 01 01 01 01 00 ...    298          DC.B 1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+00000662= 00 00 00 00 00 00 ...    299          DC.B 0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,1,1,1,1,1
+00000677= 01 01 01 00 00 00 ...    300          DC.B 1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0000068B= 00 00 00 00 00 00 ...    301          DC.B 0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,1,1,3
+000006A0                           302          DS.W 1
+000006A0                           303  -------------------- end include --------------------
+Line 304 ERROR: Symbol value differs between first and second pass
+000006A2                           304  FIREINIT
+Line 305 ERROR: Undefined symbol
+000006A2  30BC BD16                305              MOVE.W #FIREX, (A0)
+Line 306 ERROR: Undefined symbol
+000006A6  317C BD16 0002           306              MOVE.W #FIREY, 2(A0)
+000006AC  4E75                     307          RTS
+000006AE                           308  
+Line 309 ERROR: Symbol value differs between first and second pass
+000006AE                           309  FIREUPD
+000006AE                           310          
+000006AE  48A7 C000                311          MOVEM.W D0-D1, -(A7)
+000006B2                           312          
+000006B2  3010                     313          MOVE.W (A0), D0
+000006B4  3228 0002                314          MOVE.W 2(A0), D1
+Line 315 ERROR: Undefined symbol
+000006B8  B27C BD16                315          CMP #PROPY, D1
+000006BC  6D00 0024                316          BLT .CONT
+Line 317 ERROR: Undefined symbol
+000006C0  4EB9 004DBD16            317          JSR AGLKILL
+000006C6  6000 0028                318          BRA .END
+000006CA                           319  
+Line 320 ERROR: Symbol value differs between first and second pass
+000006CA                           320  .CONT
+Line 321 ERROR: Undefined symbol
+000006CA  0640 BD16                321          ADD.W #FIRESP, D0
+Line 322 ERROR: Undefined symbol
+000006CE  0641 BD16                322          ADD.W #FIRESP, D1
+000006D2  3080                     323          MOVE.W D0, (A0)
+000006D4  3141 0002                324          MOVE.W D1, 2(A0)
+Line 325 ERROR: Symbol value differs between first and second pass
+000006D8                           325  .END
+000006D8  4C9F 0003                326          MOVEM.W (A7)+, D0-D1
+000006DC  4E75                     327          RTS
+000006DE                           328  
+Line 329 ERROR: Symbol value differs between first and second pass
+000006DE                           329  FIREPLOT
+000006DE  3F01                     330          MOVE.W D1, -(A7)
+000006E0                           331          
+000006E0  3210                     332          MOVE.W (A0), D1
+000006E2  4EB8 00DA                333          JSR BARREL
+000006E6                           334          
+000006E6  321F                     335          MOVE.W (A7)+, D1
+000006E8  4E75                     336          RTS
+000006EA                           337  
+000006EA                           338  
+000006EA                           339  
+000006EA                           340  
+000006EA                           341  
+000006EA                           342  
+000006EA                           343  
+000006EA                           344  
+000006EA                           345  
+000006EA                           346  
+000006EA                           347  -------------------- end include --------------------
+000006EA                           348          
+000006EA                           349          
+000006EA                           350  *---Initilize Enviroment-------------------------------------------------
+Line 351 ERROR: Symbol value differs between first and second pass
+000006EA                           351  ENVINIT
+000006EA                           352  * Inicializa Enviroment
+000006EA                           353  * INPUT:    A0 pointer to instance variables
+000006EA                           354  * OUTPUT:   None
+000006EA                           355  * MODIFIES: None
+000006EA                           356  *--------------------------------------------------------------------
+000006EA                           357          *Almacena el id del enviroment actual
+Line 358 ERROR: Undefined symbol
+000006EA  30B9 004DBD16            358          MOVE.W (ENVID), (A0)
+000006F0  3008                     359          MOVE.W A0, D0
+000006F2  5240                     360          ADDQ.W #1, D0
+Line 361 ERROR: Undefined symbol
+000006F4  33C0 005455B8            361          MOVE.W D0, (ENVID)
+000006FA                           362          
+000006FA                           363          *Elige un fondo
+Line 364 ERROR: Undefined symbol
+000006FA  4EB9 004DBD16            364          JSR UTLRAND
+00000700  C0BC 00000003            365          AND.L #$00000003, D0
+00000706  3140 0002                366          MOVE.W D0, 2(A0)
+0000070A                           367          
+0000070A                           368          *Elige Center Prop
+Line 369 ERROR: Undefined symbol
+0000070A  4EB9 004DBD16            369          JSR UTLRAND
+00000710  C0BC 00000003            370          AND.L #$00000003, D0
+00000716  3140 0004                371          MOVE.W D0, 4(A0)
+0000071A                           372  
+0000071A                           373          *Elige si hay cuerda
+Line 374 ERROR: Undefined symbol
+0000071A  4EB9 004DBD16            374          JSR UTLRAND
+00000720  C0BC 00000001            375          AND.L #$00000001, D0
+00000726  3140 0006                376          MOVE.W D0, 6(A0)
+Line 377 ERROR: Undefined symbol
+0000072A  4EB9 004DBD16            377          JSR ROPEINIT
+00000730                           378          
+00000730                           379          *Elige si hay minas
+Line 380 ERROR: Undefined symbol
+00000730  4EB9 004DBD16            380          JSR UTLRAND
+00000736  C0BC 00000001            381          AND.L #$00000001, D0
+0000073C  3140 0008                382          MOVE.W D0, 8(A0)
+00000740                           383  
+00000740                           384          *Elige si hay Barriles
+Line 385 ERROR: Undefined symbol
+00000740  4EB9 004DBD16            385          JSR UTLRAND
+00000746  C0BC 00000001            386          AND.L #$00000001, D0
+0000074C  3140 000A                387          MOVE.W D0, 10(A0)
+00000750                           388  
+00000750                           389          *ELIGE si hay pajaro
+Line 390 ERROR: Undefined symbol
+00000750  4EB9 004DBD16            390          JSR UTLRAND
+00000756  C0BC 00000001            391          AND.L #$00000001, D0
+0000075C  3140 000C                392          MOVE.W D0, 12(A0)
+00000760                           393  
+00000760                           394          *Elige si hay puertas
+Line 395 ERROR: Undefined symbol
+00000760  4EB9 004DBD16            395          JSR UTLRAND
+00000766  C0BC 00000003            396          AND.L #$00000003, D0
+0000076C  3140 000E                397          MOVE.W D0, 14(A0)
+00000770                           398          
+00000770  4CDF 0201                399          MOVEM.L (A7)+, D0/A1
+00000774  4E75                     400          RTS
+00000776                           401  *---Update Enviroment----------------------------------------------------
+Line 402 ERROR: Symbol value differs between first and second pass
+00000776                           402  ENVUPD
+00000776                           403  * Acltualiza Enviroment
+00000776                           404  * INPUT:    A0 pointer to instance variables
+00000776                           405  * OUTPUT:   None
+00000776                           406  * MODIFIES: None
+00000776                           407  *--------------------------------------------------------------------
+00000776  48E7 8070                408          MOVEM.L D0/A1-A3, -(A7)
+0000077A                           409          
+0000077A  3010                     410          MOVE.W (A0), D0
+Line 411 ERROR: Undefined symbol
+0000077C  B079 004DBD16            411          CMP.W (CURRENV), D0
+00000782  6600 00B2                412          BNE .ENDUPD
+00000786                           413          
+00000786                           414          *Updates the barrels
+00000786  3028 000A                415          MOVE.W 10(A0), D0
+0000078A  4A40                     416          TST.W D0
+0000078C  6700 005C                417          BEQ .UPDFIREBALLS
+00000790                           418          
+00000790  5240                     419          ADDQ.W #1, D0
+00000792  3140 000A                420          MOVE.W D0, 10(A0)
+00000796  B07C 0002                421          CMP #2, D0
+0000079A  6700 0038                422          BEQ .NEWBARREL
+Line 423 ERROR: Undefined symbol
+0000079E  B07C BD16                423          CMP #BARRELTIM, D0
+000007A2  6700 0030                424          BEQ .NEWBARREL
+Line 425 ERROR: Invalid syntax
+000007A6                           425          CMP #BARRELTIM*2, D0
+000007A6  6700 002C                426          BEQ .NEWBARREL
+000007AA  6D00 003E                427          BLT .UPDFIREBALLS
+000007AE  317C 0000 000A           428          MOVE.W #0, 10(A0)
+000007B4  6000 0034                429          BRA .UPDFIREBALLS
+Line 430 ERROR: Symbol value differs between first and second pass
+000007B8                           430  .NEWBARREL
+000007B8  43F8 017A                431          LEA BARRELINIT, A1
+000007BC  45F8 0180                432          LEA BARRELUPD, A2
+000007C0  47F8 01A0                433          LEA BARRELPLOT, A3
+000007C4  303C 0002                434          MOVE.W #2, D0
+Line 435 ERROR: Undefined symbol
+000007C8  4EB9 004DBD16            435          JSR AGLADD
+000007CE                           436  
+Line 437 ERROR: Symbol value differs between first and second pass
+000007CE                           437  .UPDFIREBALLS
+000007CE                           438          *Updates the fireballs
+000007CE  3028 000C                439          MOVE.W 12(A0), D0
+000007D2  4A40                     440          TST.W D0
+000007D4  6700 0060                441          BEQ .ENDUPD
+000007D8                           442          
+000007D8  5240                     443          ADDQ.W #1, D0
+000007DA  3140 000C                444          MOVE.W D0, 12(A0)
+000007DE  B07C 0002                445          CMP #2, D0
+000007E2  6700 003C                446          BEQ .NEWFIRE
+Line 447 ERROR: Undefined symbol
+000007E6  B07C BD16                447          CMP #FIRETIM, D0
+000007EA  6700 0034                448          BEQ .NEWFIRE
+Line 449 ERROR: Invalid syntax
+000007EE                           449          CMP #FIRETIM*2, D0
+000007EE  6700 0030                450          BEQ .NEWFIRE
+000007F2  6D00 0042                451          BLT .ENDUPD
+000007F6  317C 0000 000C           452          MOVE.W #0, 12(A0)
+000007FC  6000 0038                453          BRA .ENDUPD
+Line 454 ERROR: Symbol value differs between first and second pass
+00000800                           454  .NEWFIRE
+00000800  43F8 06BA                455          LEA FIREINIT, A1
+00000804  45F8 06C6                456          LEA FIREUPD, A2
+00000808  47F8 06F6                457          LEA FIREPLOT, A3
+0000080C  303C 0003                458          MOVE.W #3, D0
+Line 459 ERROR: Undefined symbol
+00000810  4EB9 004DBD16            459          JSR AGLADD
+00000816                           460          
+Line 461 ERROR: Symbol value differs between first and second pass
+00000816                           461  .ENDUPD
+00000816  4CDF 0E01                462          MOVEM.L (A7)+, D0/A1-A3
+0000081A  4E75                     463          RTS
+0000081C                           464  
+0000081C                           465  *---Plot Barrel------------------------------------------------------
+Line 466 ERROR: Symbol value differs between first and second pass
+0000081C                           466  ENVPLOT
+0000081C                           467  * Pinta Enviroment
+0000081C                           468  * INPUT:    A0 pointer to instance variables
+0000081C                           469  * OUTPUT:   None
+0000081C                           470  * MODIFIES: None
+0000081C                           471  *--------------------------------------------------------------------
+0000081C  3F00                     472          MOVE.W D0, -(A7)
+0000081E                           473          
+0000081E  3010                     474          MOVE.W (A0), D0
+Line 475 ERROR: Undefined symbol
+00000820  B079 004DBD16            475          CMP.W (CURRENV), D0
+00000826  6600 00A4                476          BNE .DONE
+0000082A                           477          
+0000082A                           478          *Pinta el fondo
+0000082A  3028 0002                479          MOVE.W 2(A0), D0
+0000082E  4A40                     480          TST.W D0
+00000830  6700 0036                481          BEQ .DRAWHILLS1
+00000834  B07C 0002                482          CMP.W #2, D0
+00000838  6D00 0036                483          BLT .DRAWHILLS2
+0000083C  6700 003A                484          BEQ .DRAWPINES
+00000840                           485              ;DRAWSQTREES
+00000840  4EB8 00D8                486          JSR SQTREES
+00000844  6000 0036                487          BRA .CONT
+Line 488 ERROR: Symbol value differs between first and second pass
+00000848                           488  .DRAWHILLS1
+00000848  4EB8 0000                489          JSR HILLS1
+0000084C  6000 002E                490          BRA .CONT
+Line 491 ERROR: Symbol value differs between first and second pass
+00000850                           491  .DRAWHILLS2
+00000850  4EB8 00D4                492          JSR HILLS2
+00000854  6000 0026                493          BRA .CONT
+Line 494 ERROR: Symbol value differs between first and second pass
+00000858                           494  .DRAWPINES
+00000858  4EB8 00D6                495          JSR PINES
+Line 496 ERROR: Symbol value differs between first and second pass
+0000085C                           496  .CONT
+0000085C                           497          
+0000085C                           498          *Dibuja el prop del centro
+0000085C  3028 0004                499          MOVE.W 4(A0), D0
+00000860  4A40                     500          TST.W D0
+00000862  6700 0048                501          BEQ .CONT2
+00000866  B07C 0002                502          CMP.W #2, D0
+0000086A  6D00 0030                503          BLT .DRAWLADDER
+0000086E  6700 0036                504          BEQ .DRAWCRABS
+00000872                           505              ;DRAWTOXIC
+Line 506 ERROR: Undefined symbol
+00000872  4EB9 004DBD16            506          JSR TOXICPLOT
+00000878  6000 0032                507          BRA .CONT2
+Line 508 ERROR: Symbol value differs between first and second pass
+0000087C                           508  .DRAWLADDER
+Line 509 ERROR: Undefined symbol
+0000087C  4EB9 004DBD16            509          JSR LADDER
+00000882  6000 0028                510          BRA .CONT2
+Line 511 ERROR: Symbol value differs between first and second pass
+00000886                           511  .DRAWCRABS
+Line 512 ERROR: Undefined symbol
+00000886  4EB9 004DBD16            512          JSR CRABPLOT
+Line 513 ERROR: Symbol value differs between first and second pass
+0000088C                           513  .CONT2
+0000088C                           514          
+0000088C                           515          *Dibuja la cuerda
+0000088C  3028 0006                516          MOVE.W 6(A0), D0
+00000890  4A40                     517          TST.W D0
+00000892  6700 0028                518          BEQ .CONT3
+Line 519 ERROR: Undefined symbol
+00000896  4EB9 004DBD16            519          JSR ROPEPLOT
+Line 520 ERROR: Symbol value differs between first and second pass
+0000089C                           520  .CONT3
+0000089C                           521          
+0000089C                           522          *Dibuja las minas
+0000089C  3028 0008                523          MOVE.W 8(A0), D0
+000008A0  4A40                     524          TST.W D0
+000008A2  6700 0028                525          BEQ .CONT4
+Line 526 ERROR: Undefined symbol
+000008A6  4EB9 004DBD16            526          JSR MINEPLOT
+Line 527 ERROR: Symbol value differs between first and second pass
+000008AC                           527  .CONT4
+000008AC                           528  
+Line 529 ERROR: Symbol value differs between first and second pass
+000008AC                           529  .DONE
+000008AC  301F                     530          MOVE.W (A7)+, D0
+000008AE  4E75                     531          RTS
+000008B0                           532  
+000008B0                           533  
+000008B0                           534  
+000008B0                           535  
+000008B0                           536  
+000008B0                           537  
+Line 538 WARNING: END directive missing, starting address not set
+
+77 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+BARREL              DA
+BARRELINIT          17A
+BARRELPLOT          1A0
+BARRELUPD           180
+BARRELUPD:CONT      196
+BARRELUPD:END       19C
+ENVINIT             702
+ENVPLOT             83C
+ENVPLOT:CONT        87C
+ENVPLOT:CONT2       8AC
+ENVPLOT:CONT3       8BC
+ENVPLOT:CONT4       8CC
+ENVPLOT:DONE        8CC
+ENVPLOT:DRAWCRABS   8A6
+ENVPLOT:DRAWHILLS1  868
+ENVPLOT:DRAWHILLS2  870
+ENVPLOT:DRAWLADDER  89C
+ENVPLOT:DRAWPINES   878
+ENVUPD              78E
+ENVUPD:ENDUPD       836
+ENVUPD:NEWBARREL    7D4
+ENVUPD:NEWFIRE      820
+ENVUPD:UPDFIREBALLS  7EA
+FIREBALL            1AC
+FIREINIT            6BA
+FIREPLOT            6F6
+FIREUPD             6C6
+FIREUPD:CONT        6E2
+FIREUPD:END         6F0
+HILLS1              0
+HILLS2              D4
+PINES               D6
+SQTREES             D8

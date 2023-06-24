@@ -1,0 +1,47 @@
+00051BF2 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 31/12/2022 22:05:32
+
+00000000                             1  *----------------------------------------------------------------
+00000000                             2  DEALDMG
+00000000                             3  * Subrutina que reduce TRUEHP y actualiza PIPHP como correspond
+00000000                             4  * Permite darle un tiempo de invulnerabilidad
+00000000                             5  *----------------------------------------------------------------
+00000000  3F00                       6          MOVE.W D0, -(A7)
+00000002                             7          
+Line 8 ERROR: Undefined symbol
+00000002  3039 004DBD16              8          MOVE.W (TRUEHP), D0
+00000008  5340                       9          SUB.W #1, D0
+Line 10 ERROR: Undefined symbol
+0000000A  33C0 005455B8             10          MOVE.W D0, (TRUEHP)
+Line 11 ERROR: Undefined symbol
+00000010  80FC BD16                 11          DIVU.W #INVTIM, D0
+Line 12 ERROR: Undefined symbol
+00000014  33C0 005455B8             12          MOVE.W D0, (PIPHP)
+0000001A  6000 0002                 13          BRA .END
+0000001E                            14          
+0000001E                            15  
+0000001E                            16  .END    
+0000001E  301F                      17          MOVE.W (A7)+, D0
+00000020  4E75                      18          RTS
+00000022                            19  *----------------------------------------------------------------
+00000022                            20  UPDDMG
+00000022                            21  * Subrutina
+00000022                            22  *----------------------------------------------------------------
+00000022  3F00                      23          MOVE.W D0, -(A7)
+00000024                            24          
+00000024                            25          
+00000024  301F                      26          MOVE.W (A7)+, D0
+00000026  4E75                      27          RTS
+Line 28 WARNING: END directive missing, starting address not set
+
+4 errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+DEALDMG             0
+DEALDMG:END         1E
+UPDDMG              22
